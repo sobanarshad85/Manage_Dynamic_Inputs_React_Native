@@ -11,6 +11,7 @@ class AuthCheckScreen extends Component {
         return (
             <View style={styles.container}>
                 <Text>AuthCheckScreen</Text>
+                
             </View>
         );
     }
