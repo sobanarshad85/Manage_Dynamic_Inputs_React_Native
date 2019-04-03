@@ -1,10 +1,13 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import HomeScreen from './home'
-import ProfileScreen from './profile'
+import { createStackNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
+import AuthCheckScreen from '../AuthCheck/view'
+import LoginScreen from '../LoginScreen/view'
 
-const MainNavigator = createStackNavigator({
-    Home: { screen: HomeScreen },
-    Profile: { screen: ProfileScreen },
+const MainNavigator = createSwitchNavigator({
+    AuthCheckScreen: { screen: AuthCheckScreen },
+    LoginScreen: { screen: LoginScreen }
+},
+{
+    initialRouteName:'AuthCheckScreen'
 });
 
 const App = createAppContainer(MainNavigator);
