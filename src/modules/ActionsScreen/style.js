@@ -10,10 +10,5 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: white,
     },
-   logo: {
-        width: 100,
-        height: 100,
-        borderRadius: 15,
-        marginBottom: 10
-    },
+ 
 })
