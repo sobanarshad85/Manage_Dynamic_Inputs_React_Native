@@ -7,12 +7,23 @@ import DashboardScreen from '../DashboardScreen/view'
 import ActionsScreen from '../ActionsScreen/view'
 import Entypo from 'react-native-vector-icons/Entypo';
 import color from '../../../config/res'
+import VehicleDetailsScreen from '../VehicleDetailsScreen/view'
+import TaskDetailsScreen from '../TaskDetailsScreen/view'
 
 const iconSize = 25;
 
+const DashboardStack = createStackNavigator({
+    DashboardScreen: { screen: DashboardScreen },
+    VehicleDetailsScreen: { screen:VehicleDetailsScreen },
+    TaskDetailsScreen: { screen:TaskDetailsScreen }
+},
+    {
+        initialRouteName: 'DashboardScreen'
+    })
+
 const MainApp = createBottomTabNavigator({
-    DashboardScreen: {
-        screen: DashboardScreen,
+    DashboardStack: {
+        screen: DashboardStack,
         navigationOptions: {
             tabBarLabel: 'Home',
             tabBarIcon: ({ tintColor }) => (
@@ -43,7 +54,7 @@ const MainApp = createBottomTabNavigator({
     }
 },
     {
-        initialRouteName: 'DashboardScreen',
+        initialRouteName: 'DashboardStack',
         tabBarOptions: {
             showLabel: true,
             showIcon: true,
