@@ -63,22 +63,81 @@ class DashboardScreen extends Component {
                     Item: 'Mirros',
                     Status: 'Good'
                 },
-                // {
-                //     id: 6,
-                //     Item: 'Maintenace',
-                //     Status: 'Perfect'
-                // },
-                // {
-                //     id: 7,
-                //     Item: 'Tyres',
-                //     Status: 'Good'
-                // },
-                // {
-                //     id: 8,
-                //     Item: 'Mirros',
-                //     Status: 'Good'
-                // },
-
+                {
+                    id: 6,
+                    Item: 'Maintenace',
+                    Status: 'Perfect'
+                },
+                {
+                    id: 7,
+                    Item: 'Tyres',
+                    Status: 'Good'
+                },
+                {
+                    id: 8,
+                    Item: 'Mirros',
+                    Status: 'Good'
+                },
+                {
+                    id: 9,
+                    Item: 'Maintenace',
+                    Status: 'Perfect'
+                },
+                {
+                    id: 10,
+                    Item: 'Tyres',
+                    Status: 'Good'
+                },
+                {
+                    id: 11,
+                    Item: 'Tyres',
+                    Status: 'Good'
+                },
+                {
+                    id: 12,
+                    Item: 'Mirros',
+                    Status: 'Good'
+                },
+                {
+                    id: 13,
+                    Item: 'Maintenace',
+                    Status: 'Perfect'
+                },
+                {
+                    id: 14,
+                    Item: 'Tyres',
+                    Status: 'Good'
+                },
+                {
+                    id: 15,
+                    Item: 'Mirros',
+                    Status: 'Good'
+                },
+                {
+                    id: 16,
+                    Item: 'Maintenace',
+                    Status: 'Perfect'
+                },
+                {
+                    id: 17,
+                    Item: 'Tyres',
+                    Status: 'Good'
+                },
+                {
+                    id: 18,
+                    Item: 'Mirros',
+                    Status: 'Good'
+                },
+                {
+                    id: 19,
+                    Item: 'Maintenace',
+                    Status: 'Perfect'
+                },
+                {
+                    id: 20,
+                    Item: 'Tyres',
+                    Status: 'Good'
+                },
             ],
             taskData: [
                 {
@@ -101,11 +160,15 @@ class DashboardScreen extends Component {
     }
 
     navigateToVehicleDetails = () => {
-        this.props.navigation.navigate('VehicleDetailsScreen')
+        this.props.navigation.navigate('VehicleDetailsScreen', { 'VehicleData': this.state.vehicleData })
     }
+
     vehicleDetailsMethod = () => {
+        let filteredDetails = this.state.vehicleData.filter(item => {
+            return item.id <= 5
+        })
         return (
-            <TouchableWithoutFeedback onPress={this.navigateToVehicleDetails} >
+            <View>
                 <View style={styles.vehicleShortDetailsSection}>
 
                     {/* Vehicle Header */}
@@ -123,7 +186,7 @@ class DashboardScreen extends Component {
 
                     {/* Vehicle Body */}
                     {
-                        this.state.vehicleData.map((vd, index) => {
+                        filteredDetails.map((vd, index) => {
                             return (
                                 <View style={styles.vehicleBody} key={index}>
                                     <View style={{ backgroundColor: vd.id % 2 == 0 ? colors.listFirst : colors.listSecond, height: '100%' }}>
@@ -141,10 +204,28 @@ class DashboardScreen extends Component {
                             )
                         })
                     }
+                    {/* Vehicle See More Button */}
+                    <View style={styles.VehicleMoreButtonMain}>
+                        <TouchableOpacity onPress={this.navigateToVehicleDetails} >
+                            <View style={styles.VehicleMoreButtonMain}>
+                                <Text style={styles.vehicleMoreButtonText}>Complete Vehicle Details</Text>
+                                <View style={styles.vehicleMoreButtonIcon}>
+                                    <Entypo
+                                        reverse
+                                        name='chevron-thin-right'
+                                        type='font-awesome'
+                                        color={colors.white}
+                                        size={20}
+                                    />
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-            </TouchableWithoutFeedback >
+            </View>
         )
     }
+
     navigateToTaskDetails = () => {
         this.props.navigation.navigate('TaskDetailsScreen')
     }

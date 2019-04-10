@@ -63,6 +63,23 @@ export default StyleSheet.create({
         fontSize: 16,
         // fontWeight: 'bold'
     },
+    VehicleMoreButtonMain: {
+        flexDirection: 'row',
+        height: 50,
+        width: '100%',
+        backgroundColor: colors.backgroundColor,
+        justifyContent: 'center'
+    },
+    vehicleMoreButtonText: {
+        color: colors.white,
+        alignSelf: 'center',
+        fontWeight: 'bold',
+        fontSize: 18
+    },
+    vehicleMoreButtonIcon: {
+        justifyContent: 'center',
+        marginLeft: 10
+    },
     taskDataMain: {
         flex: 1,
         flexDirection: 'row',

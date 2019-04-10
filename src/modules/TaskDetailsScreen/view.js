@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import styles from './style'
 import colors from '../../../config/res'
 
@@ -20,9 +20,13 @@ class TaskDetailsScreen extends Component {
     };
     render() {
         return (
-            <View style={styles.container}>
-                <Text>TaskDetailsScreen</Text>
-            </View>
+            <ScrollView>
+                // Transport Details
+                <View style={{ marginTop: 30, width: '90%', justifyContent: 'center', alignSelf: 'center', backgroundColor: colors.backgroundColor }}>
+
+                </View>
+
+            </ScrollView>
         );
     }
 }
