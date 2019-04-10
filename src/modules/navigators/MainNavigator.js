@@ -9,13 +9,17 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import color from '../../../config/res'
 import VehicleDetailsScreen from '../VehicleDetailsScreen/view'
 import TaskDetailsScreen from '../TaskDetailsScreen/view'
+import PatientDetailsScreen from '../PatientDetailsScreen/view'
+import ClinicalQueryScreen from '../ClinicalQueryScreen/view'
 
 const iconSize = 25;
 
 const DashboardStack = createStackNavigator({
     DashboardScreen: { screen: DashboardScreen },
     VehicleDetailsScreen: { screen:VehicleDetailsScreen },
-    TaskDetailsScreen: { screen:TaskDetailsScreen }
+    TaskDetailsScreen: { screen:TaskDetailsScreen },
+    PatientDetailsScreen:{screen:PatientDetailsScreen},
+    ClinicalQueryScreen:{screen:ClinicalQueryScreen}
 },
     {
         initialRouteName: 'DashboardScreen'

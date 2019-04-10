@@ -61,6 +61,7 @@ export default StyleSheet.create({
     vehicleText: {
         color: colors.backgroundColor,
         fontSize: 16,
+        margin:5,
         // fontWeight: 'bold'
     },
     VehicleMoreButtonMain: {
@@ -84,7 +85,7 @@ export default StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         marginBottom: 5,
-        height: 90,
+        // height: 90,
         width: '90%',
         alignSelf: 'center',
         backgroundColor: colors.white,

@@ -142,19 +142,39 @@ class DashboardScreen extends Component {
             taskData: [
                 {
                     id: 1,
-                    name: 'Rescue Mission',
-                    mission: "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text e"
+                    Name: 'Rescue Mission',
+                    Item: 'Destination',
+                    Status: 'St. Road, Off Gulberg',
+                    Mission: 'Rescue a dying man'
                 },
                 {
                     id: 2,
-                    name: 'Fire',
-                    mission: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ips"
+                    Name: 'Fire',
+                    Item: 'PickUp ',
+                    Status: 'Motorways Kala Shah Kaku',
+                    Mission: 'Rescue a heart attack patient',
                 },
                 {
                     id: 3,
-                    name: 'Accident',
-                    mission: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ips'
-                }
+                    Name: 'Accident',
+                    Item: 'Infectious Status',
+                    Status: 'N/A',
+                    Mission: 'Lorem Ipsum is a good site'
+                },
+                {
+                    id: 4,
+                    Name: 'Fire',
+                    Item: 'Special Medical Requirements',
+                    Status: "This is dummy text from lorem ipsum, this is the largest platform of getting your dummy text, to test your application, any many more thigns",
+                    Mission: 'To get dummmy data'
+                },
+                {
+                    id: 5,
+                    Name: 'Critical Patient',
+                    Item: 'Number Of Passengers',
+                    Status: 5,
+                    Mission: 'Lorem Ipsum Website is for dummy data to manipulate'
+                },
             ]
         }
     }
@@ -227,7 +247,7 @@ class DashboardScreen extends Component {
     }
 
     navigateToTaskDetails = () => {
-        this.props.navigation.navigate('TaskDetailsScreen')
+        this.props.navigation.navigate('TaskDetailsScreen', { 'taskData': this.state.taskData })
     }
 
     taskDetailsMethod = () => {
@@ -240,10 +260,13 @@ class DashboardScreen extends Component {
                                 <View style={styles.taskDataMain} >
                                     <View style={{ flex: 15 }}>
                                         <View style={{ marginLeft: 5 }}>
-                                            <Text style={{ fontSize: 18, color: colors.backgroundColor }}>{td.name}</Text>
+                                            <Text style={{ fontSize: 18, color: colors.backgroundColor, }}>{td.Name}</Text>
                                         </View>
                                         <View style={{ marginLeft: 5 }}>
-                                            <Text style={{ color: 'black' }}>{td.mission}</Text>
+                                            <Text style={{ color: 'black' }}>{td.Mission}</Text>
+                                        </View>
+                                        <View style={{ marginLeft: 5 }}>
+                                            <Text style={{ color: 'black', paddingBottom: 5 }}>{td.Status}</Text>
                                         </View>
                                     </View>
                                     <View style={styles.taskIcon}>
