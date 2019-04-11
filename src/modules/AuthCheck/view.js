@@ -18,7 +18,7 @@ class AuthCheckScreen extends Component {
     }
 
     loadApp = async () => {
-        // AsyncStorage.setItem('userToken', 'hey')
+        AsyncStorage.setItem('userToken', 'hey')
         // AsyncStorage.removeItem('userToken')
         const userToken = await AsyncStorage.getItem('userToken')
 

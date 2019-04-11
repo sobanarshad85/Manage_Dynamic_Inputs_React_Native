@@ -6,6 +6,18 @@ import colors from '../../../config/res'
 
 // create a component
 class ClinicalQueryScreen extends Component {
+    static navigationOptions = ({ navigation }) => {
+        return {
+            title: 'Clinical Query',
+            headerTitleStyle: {
+                fontSize: 15
+            },
+            headerTintColor: colors.white,
+            headerStyle: {
+                backgroundColor: colors.backgroundColor,
+            },
+        }
+    };
     render() {
         return (
             <View style={styles.container}>

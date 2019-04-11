@@ -10,5 +10,14 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: white,
     },
- 
+    input1: {
+        height: 60,
+        borderColor: 'red',
+        borderWidth: 1,
+        borderRadius: 5,
+        color: 'red',
+        width: '80%',
+        marginTop: 10,
+        // marginBottom: 5
+    },
 })

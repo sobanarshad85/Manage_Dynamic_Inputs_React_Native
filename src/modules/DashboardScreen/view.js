@@ -23,12 +23,10 @@ class DashboardScreen extends Component {
                 backgroundColor: colors.backgroundColor,
             },
             headerRight: (
-                <View style={{ marginRight: 20 }}>
-                    <TouchableOpacity onPress={navigation.getParam('captureScreen')}>
+                <View style={{ marginRight: 20 }}> 
                         <View style={styles.headerNotificationView}>
-                            <Text style={styles.headerNotificationText}>23</Text>
+                            <Text style={styles.headerNotificationText}>{navigation.getParam('captureScreen')}</Text>
                         </View>
-                    </TouchableOpacity>
                 </View>
             ),
         }
@@ -175,8 +173,19 @@ class DashboardScreen extends Component {
                     Status: 5,
                     Mission: 'Lorem Ipsum Website is for dummy data to manipulate'
                 },
+                {
+                    id: 6,
+                    Name: 'Rescue Mission',
+                    Item: 'Destination',
+                    Status: 'St. Road, Off Gulberg',
+                    Mission: 'Rescue a dying man'
+                },
             ]
         }
+    }
+
+    componentDidMount() {
+        this.props.navigation.setParams({ captureScreen: this.state.taskData.length });
     }
 
     navigateToVehicleDetails = () => {
