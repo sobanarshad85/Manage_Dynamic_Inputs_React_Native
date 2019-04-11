@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, ScrollView, Picker } from 'react-native';
+import { View, Text, StyleSheet, TextInput, ScrollView, Picker, CheckBox } from 'react-native';
 import styles from './style'
 import color from '../../../config/res'
 
@@ -12,22 +12,32 @@ class ActionsScreen extends Component {
         this.state = {
             dynamicInputs: [
                 {
-                    id: 1,
+                    id: 0,
                     type: 'TextInput',
                     response: null,
                 },
                 {
-                    id: 2,
+                    id: 1,
                     type: 'picker',
                     response: null,
                 },
                 {
-                    id: 3,
+                    id: 2,
                     type: 'Text',
                     response: null,
                 },
                 {
                     id: 3,
+                    type: 'TextInput',
+                    response: null,
+                },
+                {
+                    id: 4,
+                    type: 'CheckBox',
+                    response: false,
+                },
+                {
+                    id: 5,
                     type: 'TextInput',
                     response: null,
                 },
@@ -38,8 +48,9 @@ class ActionsScreen extends Component {
     change = (text, key) => {
         console.warn('this is id: ' + key)
         console.warn('this is text: ' + text)
+        console.warn('this is type: ' + this.state.dynamicInputs[key].type)
         let updateChanging = this.state.dynamicInputs;
-        updateChanging[key - 1].response = text;
+        updateChanging[key].response = text;
         this.setState({
             dynamicInputs: updateChanging
         })
@@ -47,6 +58,8 @@ class ActionsScreen extends Component {
     render() {
         return (
             <ScrollView>
+                
+                
                 <View style={{}}>
                     <Text>ActionsScreensss</Text>
                     <TextInput style={{ borderWidth: 1 }} onChangeText={(text) => this.setState({ input: text })} />
@@ -57,7 +70,7 @@ class ActionsScreen extends Component {
                     {
                         this.state.dynamicInputs.map((it, key) => {
                             return (
-                                it.type === 'TextInput' || it.type === 'picker' ?
+                                it.type === 'TextInput' || it.type === 'picker' || it.type === 'CheckBox' ?
                                     <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: 'white', height: 200, width: '80%', borderRadius: 20 }}>
                                         <Text>{it.response}</Text>
                                     </View>
@@ -88,7 +101,7 @@ class ActionsScreen extends Component {
                                     :
                                     it.type === 'picker' ?
                                         <Picker
-                                            selectedValue={this.state.dynamicInputs[it.id-1].response}
+                                            selectedValue={this.state.dynamicInputs[it.id].response}
                                             style={{ height: 50, width: 200 }}
                                             onValueChange={(itemValue, itemIndex) =>
                                                 this.change(itemValue, it.id)
@@ -98,12 +111,29 @@ class ActionsScreen extends Component {
                                             <Picker.Item label="C#" value="C#" />
                                         </Picker>
                                         :
-                                        <View><Text>not an input</Text></View>
+                                        it.type === 'CheckBox' ?
+                                            <CheckBox value={this.state.dynamicInputs[it.id].response}
+                                                onChange={() => {
+                                                    console.warn('this is id: ' + it.id)
+                                                    console.warn('this is type: ' + this.state.dynamicInputs[it.id].type)
+                                                    console.warn('this is response: ' + this.state.dynamicInputs[it.id].response)
+                                                    let updateChanging = this.state.dynamicInputs;
+                                                    updateChanging[it.id].response = !this.state.dynamicInputs[it.id].response;
+                                                    this.setState({
+                                                        dynamicInputs: updateChanging
+                                                    },()=>console.warn('this is original'+this.state.dynamicInputs[it.id].response))
+                                                }}
+                                            />
+                                            :
+                                            <View><Text>this is not an input</Text></View>
                             )
                         })
                     }
 
                 </View>
+
+                <CheckBox value={this.state.check} onChange={() => this.setState({ check: !this.state.check })} />
+
 
                 <Text>Item Picker</Text>
 
