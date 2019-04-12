@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TouchableWithoutFeedback, ActivityIndicator, TextInput, Button ,Image} from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TouchableWithoutFeedback, ActivityIndicator, TextInput, Button, Image } from 'react-native';
 import styles from './style'
 import colors from '../../../config/res'
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -59,26 +59,27 @@ class IncidentReportForm extends Component {
     }
     render() {
         return (
-            <View style={{ marginTop: 30 }}>
-                <TextInput
-                    style={styles.input1}
-                    name='incidentReport'
-                    // maxLength={350}
-                    autoFocus={false}
-                    placeholder='Incident Report'
-                    multiline={true}
-                    placeholderTextColor={colors.backgroundColor}
-                    onChangeText={text => this.setState({ text })}
-                />
+            <ScrollView>
+                <View style={{ marginTop: 30 }}>
+                    <TextInput
+                        style={styles.input1}
+                        name='incidentReport'
+                        // maxLength={350}
+                        autoFocus={false}
+                        placeholder='Incident Report'
+                        multiline={true}
+                        placeholderTextColor={colors.backgroundColor}
+                        onChangeText={text => this.setState({ text })}
+                    />
+                    <Text>{this.state.text}</Text>
+                    <Button style={{ marginTop: 10 }} onPress={this.uploadImage} title='Upload Incident Image' />
 
-                <Button style={{marginTop:10}} onPress={this.uploadImage} title='Upload Incident Image' />
-
-                <Image
-                    style={{ width: 200, height: 200 }}
-                    source={this.state.avatarSource}
-                />
-                <Text>{this.state.text}</Text>
-            </View>
+                    <Image
+                        style={{ width: 200, height: 200 }}
+                        source={this.state.avatarSource}
+                    />
+                </View>
+            </ScrollView>
         );
     }
 }
