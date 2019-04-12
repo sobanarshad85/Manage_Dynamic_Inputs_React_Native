@@ -109,9 +109,9 @@ class PatientDetailsScreen extends Component {
     }
 
     change = (text, key) => {
-        console.warn('this is id: ' + key)
-        console.warn('this is text: ' + text)
-        console.warn('this is type: ' + this.state.dynamicInputs[key].type)
+        // console.warn('this is id: ' + key)
+        // console.warn('this is text: ' + text)
+        // console.warn('this is type: ' + this.state.dynamicInputs[key].type)
         let updateChanging = this.state.dynamicInputs;
         updateChanging[key].response = text;
         this.setState({
@@ -119,14 +119,14 @@ class PatientDetailsScreen extends Component {
         })
     }
     onCheckboxChange = (text, key) => {
-        console.warn('this is id: ' + key)
-        console.warn('this is type: ' + this.state.dynamicInputs[key].type)
-        console.warn('this is response: ' + this.state.dynamicInputs[key].response)
+        // console.warn('this is id: ' + key)
+        // console.warn('this is type: ' + this.state.dynamicInputs[key].type)
+        // console.warn('this is response: ' + this.state.dynamicInputs[key].response)
         let updateChanging = this.state.dynamicInputs;
         updateChanging[key].response = !this.state.dynamicInputs[key].response;
         this.setState({
             dynamicInputs: updateChanging
-        }, () => console.warn('this is original' + this.state.dynamicInputs[key].response))
+        })
     }
     render() {
         let { loading } = this.state
@@ -159,11 +159,11 @@ class PatientDetailsScreen extends Component {
                                             <Text style={{ fontWeight: 'bold', color: 'black' }}>{this.state.dynamicInputs[it.id].heading}</Text>
                                             <TextInput
                                                 style={styles.input1}
-                                                name="tweet"
-                                                maxLength={350}
+                                                name={this.state.dynamicInputs[it.id].id}
+                                                // maxLength={350}
                                                 autoFocus={false}
                                                 placeholder={this.state.dynamicInputs[it.id].heading}
-                                                multiline={true}
+                                                // multiline={true}
                                                 placeholderTextColor={colors.backgroundColor}
                                                 onChangeText={(text) => {
                                                     this.change(text, it.id)
