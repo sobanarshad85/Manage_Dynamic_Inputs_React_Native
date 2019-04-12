@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "43227511612",
+    "firebase_url": "https://iauditor-8d03a.firebaseio.com",
+    "project_id": "iauditor-8d03a",
+    "storage_bucket": "iauditor-8d03a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43227511612:android:92f0d60361257155",
+        "android_client_info": {
+          "package_name": "com.iauditor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43227511612-vk1vtd99g0jdqa7jljtpartq79g7frau.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYwpP6mOf-kxXCLKmF06zyPLk4evZQyTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43227511612-vk1vtd99g0jdqa7jljtpartq79g7frau.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

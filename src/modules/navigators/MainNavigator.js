@@ -58,7 +58,7 @@ const MainApp = createBottomTabNavigator({
     }
 },
     {
-        initialRouteName: 'ActionsScreen',
+        initialRouteName: 'DashboardStack',
         tabBarOptions: {
             showLabel: true,
             showIcon: true,

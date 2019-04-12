@@ -80,7 +80,7 @@ export default StyleSheet.create({
     },
     buttonTouchable: {
         height: 40,
-        width: 180,
+        width: '75%',
         backgroundColor: colors.backgroundColor,
         justifyContent: 'center',
         alignItems: 'center',

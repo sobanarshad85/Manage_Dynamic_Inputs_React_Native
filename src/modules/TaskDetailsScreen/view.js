@@ -84,6 +84,8 @@ class TaskDetailsScreen extends Component {
     navigateToClinicalQuery = () => {
         this.props.navigation.navigate('ClinicalQueryScreen')
     }
+
+
     render() {
         return (
 

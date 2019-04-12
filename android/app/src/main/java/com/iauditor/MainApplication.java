@@ -3,6 +3,7 @@ package com.iauditor;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.invertase.firebase.RNFirebasePackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.imagepicker.ImagePickerPackage;
@@ -14,6 +15,9 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
 import java.util.List;
+
+import io.invertase.firebase.messaging.RNFirebaseMessagingPackage; // <-- Add this line
+import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,10 +31,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFirebasePackage(),
             new AsyncStoragePackage(),
             new VectorIconsPackage(),
             new ImagePickerPackage(),
-            new RNGestureHandlerPackage()
+            new RNGestureHandlerPackage(),
+            new RNFirebaseMessagingPackage(),
+            new RNFirebaseNotificationsPackage()
       );
     }
 
