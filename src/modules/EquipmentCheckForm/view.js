@@ -5,10 +5,10 @@ import styles from './style'
 import colors from '../../../config/res'
 
 // create a component
-class PatientDetailsScreen extends Component {
+class EquipmentCheckForm extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            title: 'Patient Details',
+            title: 'Equipment Check Form',
             headerTitleStyle: {
                 fontSize: 15
             },
@@ -18,7 +18,6 @@ class PatientDetailsScreen extends Component {
             },
         }
     };
-
     constructor() {
         super()
         this.state = {
@@ -144,7 +143,7 @@ class PatientDetailsScreen extends Component {
                         <View style={styles.headerMainStyle}>
                             <View style={{ flex: 1, flexDirection: 'row' }}>
                                 <View style={styles.headerTextView}>
-                                    <Text style={styles.headerText}>Clinical Form</Text>
+                                    <Text style={styles.headerText}>Equipment Check Form</Text>
                                 </View>
                             </View>
                         </View>
@@ -218,8 +217,5 @@ class PatientDetailsScreen extends Component {
     }
 }
 
-// define your styles
-
-
 //make this component available to the app
-export default PatientDetailsScreen;
+export default EquipmentCheckForm;

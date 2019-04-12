@@ -11,19 +11,29 @@ import VehicleDetailsScreen from '../VehicleDetailsScreen/view'
 import TaskDetailsScreen from '../TaskDetailsScreen/view'
 import PatientDetailsScreen from '../PatientDetailsScreen/view'
 import ClinicalQueryScreen from '../ClinicalQueryScreen/view'
+import VehicleCheckForm from '../VehicleCheckForm/view'
+import EquipmentCheckForm from '../EquipmentCheckForm/view'
+import IncidentReportForm from '../IncidentReportForm/view'
 
 const iconSize = 25;
 
 const DashboardStack = createStackNavigator({
     DashboardScreen: { screen: DashboardScreen },
-    VehicleDetailsScreen: { screen:VehicleDetailsScreen },
-    TaskDetailsScreen: { screen:TaskDetailsScreen },
-    PatientDetailsScreen:{screen:PatientDetailsScreen},
-    ClinicalQueryScreen:{screen:ClinicalQueryScreen}
+    VehicleDetailsScreen: { screen: VehicleDetailsScreen },
+    TaskDetailsScreen: { screen: TaskDetailsScreen },
+    PatientDetailsScreen: { screen: PatientDetailsScreen },
+    ClinicalQueryScreen: { screen: ClinicalQueryScreen },
 },
     {
         initialRouteName: 'DashboardScreen'
     })
+
+const ActionStack = createStackNavigator({
+    ActionsScreen: { screen: ActionsScreen },
+    EquipmentCheckForm: { screen: EquipmentCheckForm },
+    VehicleCheckForm: { screen: VehicleCheckForm },
+    IncidentReportForm: { screen: IncidentReportForm }
+})
 
 const MainApp = createBottomTabNavigator({
     DashboardStack: {
@@ -41,8 +51,8 @@ const MainApp = createBottomTabNavigator({
             )
         }
     },
-    ActionsScreen: {
-        screen: ActionsScreen,
+    ActionStack: {
+        screen: ActionStack,
         navigationOptions: {
             tabBarLabel: 'Actions',
             tabBarIcon: ({ tintColor }) => (
